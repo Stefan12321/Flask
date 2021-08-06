@@ -1,0 +1,66 @@
+2021-08-02 12:55:25,431 ERROR: Exception on / [GET] [in /home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py", line 1511, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py", line 1857, in preprocess_request
+    rv = self.ensure_sync(func)()
+  File "/home/stefan/PycharmProjects/Flask/app/routes.py", line 104, in before_request
+    if current_user.is_authenticated:
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/werkzeug/local.py", line 422, in __get__
+    obj = instance._get_current_object()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/werkzeug/local.py", line 544, in _get_current_object
+    return self.__local()  # type: ignore
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask_login/utils.py", line 346, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 318, in _load_user
+    user = self._user_callback(user_id)
+  File "/home/stefan/PycharmProjects/Flask/app/models.py", line 65, in load_user
+    return User.query.get(int(id))
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 550, in __get__
+    mapper = orm.class_mapper(type)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 442, in class_mapper
+    mapper = _inspect_mapped_class(class_, configure=configure)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/base.py", line 421, in _inspect_mapped_class
+    mapper._check_configure()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/mapper.py", line 1873, in _check_configure
+    _configure_registries({self.registry}, cascade=True)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/mapper.py", line 3384, in _configure_registries
+    _do_configure_registries(registries, cascade)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/mapper.py", line 3423, in _do_configure_registries
+    mapper._post_configure_properties()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/mapper.py", line 1890, in _post_configure_properties
+    prop.init()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/interfaces.py", line 222, in init
+    self.do_init()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2142, in do_init
+    self._setup_join_conditions()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2254, in _setup_join_conditions
+    can_be_synced_fn=self._columns_are_mapped,
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2635, in __init__
+    self._annotate_fks()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2880, in _annotate_fks
+    self._annotate_present_fks()
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2934, in _annotate_present_fks
+    self.primaryjoin, {}, {"binary": visit_binary}
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/sql/visitors.py", line 780, in cloned_traverse
+    obj, deferred_copy_internals=deferred_copy_internals, **opts
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/sql/visitors.py", line 775, in clone
+    meth(newelem)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2924, in visit_binary
+    col = is_foreign(binary.left, binary.right)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/orm/relationships.py", line 2903, in is_foreign
+    if a.references(b):
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 1704, in references
+    if fk.column.proxy_set.intersection(column.proxy_set):
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 1113, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/sql/schema.py", line 2382, in column
+    tablekey,
+sqlalchemy.exc.NoReferencedTableError: Foreign key associated with column 'followers.follower_id' could not find table 'User' with which to generate a foreign key to target column 'id'
+2021-08-02 13:13:25,344 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]

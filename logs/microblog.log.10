@@ -1,19 +1,4 @@
-2021-07-30 23:31:38,106 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 20:29:43,244 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 20:32:47,520 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 20:33:06,184 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 21:51:02,852 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 21:52:21,017 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 21:53:09,564 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 21:53:13,433 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 21:55:05,177 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 21:59:41,336 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 22:00:44,405 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 22:03:21,306 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 22:04:08,472 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 22:04:58,953 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 22:25:45,063 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
-2021-08-01 22:25:50,134 ERROR: Exception on / [GET] [in /home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py:1455]
+2021-08-02 12:24:35,693 ERROR: Exception on / [GET] [in /home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1772, in _execute_context
     cursor, statement, parameters, context
@@ -44,7 +29,7 @@ Traceback (most recent call last):
     current_app.login_manager._load_user()
   File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 318, in _load_user
     user = self._user_callback(user_id)
-  File "/home/stefan/PycharmProjects/Flask/app/models.py", line 73, in load_user
+  File "/home/stefan/PycharmProjects/Flask/app/models.py", line 62, in load_user
     return User.query.get(int(id))
   File "<string>", line 2, in get
   File "/home/stefan/PycharmProjects/Flask/venv/lib/python3.6/site-packages/sqlalchemy/util/deprecations.py", line 390, in warned
@@ -81,4 +66,4 @@ FROM user
 WHERE user.id = ?]
 [parameters: (3,)]
 (Background on this error at: https://sqlalche.me/e/14/e3q8)
-2021-08-02 12:15:50,532 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
+2021-08-02 12:32:24,159 INFO: Microblog startup [in /home/stefan/PycharmProjects/Flask/app/__init__.py:43]
